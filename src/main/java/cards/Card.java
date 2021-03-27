@@ -22,8 +22,6 @@ public class Card implements Runnable
     @Override
     public void run()
     {
-        System.out.println("Card: " + name);
-        System.out.println("Shop: " + shop.getName());
-        System.out.println("Status: " + shop.getCurrentStatus(this));
+        System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + shop.getCurrentStatus(this) + '\n');
     }
 }

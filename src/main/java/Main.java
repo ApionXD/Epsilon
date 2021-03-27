@@ -16,12 +16,29 @@ public class Main
         Shop amazon = new Amazon();
         System.out.println("Beginning test!");
         cards = getCardList();
-        for (int i = 0; i < cards.size(); i++)
+        while (true)
         {
-            cards.get(i).run();
+            for (int i = 0; i < cards.size(); i++)
+            {
+                Thread t = new Thread(cards.get(i));
+                t.start();
+                System.out.println("Thread " + i + " started!");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            try
+            {
+                Thread.sleep(25000);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
-        timer.stop();
-        System.out.println(timer.elapsed(TimeUnit.MILLISECONDS));
+
     }
     public static ArrayList<Card> getCardList()
     {
