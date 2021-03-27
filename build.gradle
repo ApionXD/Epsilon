@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.apion'
+version '1.0-SNAPSHOT'
+mainClassName = 'Main'
+repositories {
+    mavenCentral()
+}
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.6'
+    implementation 'org.jsoup:jsoup:1.13.1'
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compile group: 'com.google.guava', name: 'guava', version: '23.5-jre'
+}
