@@ -1,10 +1,10 @@
 package shops;
 
 import cards.Card;
+import lombok.Getter;
 
 import java.util.ArrayList;
-import java.util.Map;
-
+@Getter
 public abstract class Shop
 {
     private String name;
@@ -19,15 +19,7 @@ public abstract class Shop
     {
 
     }
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-    public void setCards(ArrayList<Card> cards)
-    {
-        this.cards = cards;
-    }
-    public abstract String getCurrentStatus(int numCard);
+    public abstract String getCurrentStatus(Card cardToCheck);
     public abstract double getPrice();
     public ArrayList<Card> getCards()
     {
