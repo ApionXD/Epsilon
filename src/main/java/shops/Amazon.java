@@ -11,19 +11,21 @@ import java.util.ArrayList;
 public class Amazon extends Shop
 {
     final static private String NAME = "Amazon";
-    public Amazon()
+    private int timeout;
+    private Document lastPage;
+    public Amazon(int timeout)
     {
-        super(NAME);
+        super(NAME, timeout);
     }
     @Override
-    public String getCurrentStatus(Card cardToCheck)
+    public int getCurrentStatus(Card cardToCheck)
     {
 
-        String result = "";
+        int result = -100;
         try
         {
             String url = cardToCheck.getLink();
-            Document d = Jsoup.connect(url)
+            lastPage = Jsoup.connect(url)
                     .header("Host", "www.amazon.com")
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0")
                     .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
@@ -32,33 +34,35 @@ public class Amazon extends Shop
                     .header("Connection", "keep-alive")
                     .header("Upgrade-Insecure-Requests", "1")
                     .get();
-            Element e = d.selectFirst("#addToCart_feature_div");
+            Element e = lastPage.selectFirst("#addToCart_feature_div");
             if (e != null)
             {
-                result = "In stock!";
+                result = 1;
             }
             else
             {
-                e = d.getElementsContainingText("enter the characters you see below").first();
+                e = lastPage.getElementsContainingText("enter the characters you see below").first();
                 if (e != null)
                 {
-                    result = "Encountered a captcha";
+                    result = 0;
                 }
                 else
                 {
-                    result = "Out of Stock";
+                    result = -1;
                 }
             }
         }
         catch (IOException e)
         {
-            result = "Link " + cardToCheck.getLink() + " not found!";
+            result = 100;
         }
         return result;
     }
 
     @Override
-    public double getPrice() {
-        return 0;
+    public double getPrice(Card cardToCheck)
+    {
+        Element e = lastPage.selectFirst("#price_inside_buybox");
+        return Double.parseDouble(e.text().substring(1));
     }
 }

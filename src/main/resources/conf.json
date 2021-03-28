@@ -1,0 +1,5 @@
+{
+  "AMAZON_ENABLED": true,
+  "AMAZON_TIMEOUT": 30000,
+  "OUTPUT_VERBOSITY": 2
+}

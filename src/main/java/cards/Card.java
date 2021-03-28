@@ -17,16 +17,37 @@ public class Card implements Runnable
     private String name;
     private String link;
     private Shop shop;
-    public Card(String name, String link, Shop shop)
+    private int verbosity;
+    public Card(String name, String link, Shop shop, int verbosity)
     {
         this.name = name;
         this.link = link;
         this.shop = shop;
+        this.verbosity = verbosity;
     }
 
     @Override
     public void run()
     {
-        System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + shop.getCurrentStatus(this) + '\n');
+        while(true)
+        {
+            int status = shop.getCurrentStatus(this);
+            if (status == 1 && verbosity == 1)
+            {
+                System.out.println("Card: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + shop.getPrice(this));
+            }
+            else if (verbosity == 2)
+            {
+                System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + shop.getCurrentStatus(this) + '\n');
+            }
+            try
+            {
+                Thread.sleep(shop.getTimeout());
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 }

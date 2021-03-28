@@ -1,50 +1,46 @@
 import cards.Card;
-import com.google.common.base.Stopwatch;
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import shops.Amazon;
 import shops.Shop;
 
 import java.io.FileReader;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.InputMismatchException;
 
-import static com.google.gson.JsonParser.parseReader;
 
 public class Main
 {
-    public static final Shop AMAZON = new Amazon();
+
     public static ArrayList<Card> cards;
-    public static GsonBuilder builder = new GsonBuilder();
+
+    public static int amazonTimeout;
+    public static boolean amazonEnabled;
+    public static int outputVerbosity;
+
+    public static Shop amazon;
+
     public static void main(String[] args)
     {
-        Stopwatch timer = Stopwatch.createStarted();
-        Shop amazon = new Amazon();
-        builder.setPrettyPrinting();
-        Gson gson = builder.create();
-        System.out.println("Beginning test!");
-        cards = getCardList();
-        System.out.println(gson.toJson(cards));
-        while (true)
+        readConfig();
+        if (amazonEnabled)
         {
-            for (int i = 0; i < cards.size(); i++)
+            amazon = new Amazon(amazonTimeout);
+        }
+        cards = getCardList();
+        for (int i = 0; i < cards.size(); i++)
+        {
+            Thread t = new Thread(cards.get(i));
+            t.start();
+            if (outputVerbosity == 2)
             {
-                Thread t = new Thread(cards.get(i));
-                t.start();
                 System.out.println("Thread " + i + " started!");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
             try
             {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             }
-            catch (Exception e)
+            catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
@@ -65,15 +61,71 @@ public class Main
         }
         JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
 
-        JsonArray amazon = json.getAsJsonArray("amazon");
-        for (int i = 0; i < amazon.size(); i++)
+        if (amazonEnabled)
         {
-            JsonObject o = amazon.get(i).getAsJsonObject();
-            Card c = new Card(o.get("name").getAsString(), o.get("link").getAsString(), AMAZON);
-            result.add(c);
+            JsonArray amazonObject = json.getAsJsonArray("amazon");
+            for (int i = 0; i < amazonObject.size(); i++)
+            {
+                JsonObject o = amazonObject.get(i).getAsJsonObject();
+                Card c = new Card(o.get("name").getAsString(), o.get("link").getAsString(), amazon, outputVerbosity);
+                result.add(c);
+            }
         }
+
 
         return result;
     }
+    public static void readConfig()
+    {
+        JsonReader reader = null;
+        try
+        {
+            reader = new JsonReader(new FileReader("src/main/resources/conf.json"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
+        outputVerbosity = json.get("OUTPUT_VERBOSITY").getAsInt();
+        if (outputVerbosity < 0 || outputVerbosity > 2)
+        {
+            outputVerbosity = 0;
+            System.out.println("Invalid verbosity option in config, defaulting to 0");
 
+        }
+        amazonTimeout = json.get("AMAZON_TIMEOUT").getAsInt();
+        amazonEnabled = json.get("AMAZON_ENABLED").getAsBoolean();
+
+    }
+    public static void parseLinks()
+    {
+        JsonReader reader = null;
+        try
+        {
+            reader = new JsonReader(new FileReader("src/main/resources/links.json"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
+        JsonArray array = json.get("links").getAsJsonArray();
+        JsonArray outputArray = new JsonArray();
+        for (int i = 0; i < array.size(); i++)
+        {
+            JsonObject o = array.get(i).getAsJsonObject();
+            JsonObject output = new JsonObject();
+            if (o.get("series").getAsString().equals("3060") || o.get("series").getAsString().equals("3060ti") || o.get("series").getAsString().equals("3070") || o.get("series").getAsString().equals("3080") || o.get("series").getAsString().equals("3090"))
+            {
+                String name = o.get("brand").getAsString().toUpperCase() + " RTX " + o.get("series").getAsString() + " " + o.get("model").getAsString();
+                output.add("name", new JsonPrimitive(name));
+                String link = o.get("url").getAsString();
+                output.add("link", new JsonPrimitive(link));
+                outputArray.add(output);
+            }
+        }
+        System.out.println(outputArray.isJsonNull());
+        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(outputArray));
+    }
 }

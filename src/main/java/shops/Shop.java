@@ -9,15 +9,17 @@ import java.util.ArrayList;
 public abstract class Shop
 {
     private String name;
+    private int timeout;
 
-    public Shop(String name)
+    public Shop(String name, int timeout)
     {
         this.name = name;
+        this.timeout = timeout;
     }
     public Shop()
     {
 
     }
-    public abstract String getCurrentStatus(Card cardToCheck);
-    public abstract double getPrice();
+    public abstract int getCurrentStatus(Card cardToCheck);
+    public abstract double getPrice(Card cardToCheck);
 }
