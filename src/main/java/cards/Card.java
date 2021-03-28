@@ -38,7 +38,14 @@ public class Card implements Runnable
             }
             else if (verbosity == 2)
             {
-                System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + shop.getCurrentStatus(this) + '\n');
+                if (status == -1)
+                {
+                    System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + "Encountered captcha" + '\n');
+                }
+                if (status == 0)
+                {
+                    System.out.println("Card: " + name + '\n' + "Shop: " + shop.getName() + '\n' + "Status: " + "Out of stock" + '\n');
+                }
             }
             try
             {
