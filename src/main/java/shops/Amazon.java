@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class Amazon extends Shop
 {
-    final ArrayList<Card> CARDS = new ArrayList<Card>();
     final static private String NAME = "Amazon";
     public Amazon()
     {

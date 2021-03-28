@@ -1,21 +1,32 @@
 import cards.Card;
 import com.google.common.base.Stopwatch;
+import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import shops.Amazon;
 import shops.Shop;
 
+import java.io.FileReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+
+import static com.google.gson.JsonParser.parseReader;
 
 public class Main
 {
     public static final Shop AMAZON = new Amazon();
     public static ArrayList<Card> cards;
+    public static GsonBuilder builder = new GsonBuilder();
     public static void main(String[] args)
     {
         Stopwatch timer = Stopwatch.createStarted();
         Shop amazon = new Amazon();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
         System.out.println("Beginning test!");
         cards = getCardList();
+        System.out.println(gson.toJson(cards));
         while (true)
         {
             for (int i = 0; i < cards.size(); i++)
@@ -24,7 +35,7 @@ public class Main
                 t.start();
                 System.out.println("Thread " + i + " started!");
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -42,18 +53,27 @@ public class Main
     }
     public static ArrayList<Card> getCardList()
     {
-        ArrayList<Card> cards = new ArrayList<Card>();
-        cards.add(new Card("ASUS Dual NVIDIA GeForce RTX 3060 Ti OC Edition", "https://www.amazon.com/dp/B08P2HBBLX", AMAZON));
-        cards.add(new Card("Gigabyte RTX 3060 Ti Gaming OC", "https://www.amazon.com/dp/B08NYP7KG6", AMAZON));
-        cards.add(new Card("Gigabyte RTX 3060 Ti Gaming OC PRO", "https://www.amazon.com/dp/B08NYPLXPJ", AMAZON));
-        cards.add(new Card("Gigabyte RTX 3060 Ti Eagle", "https://www.amazon.com/dp/B08NYNJ6RC", AMAZON));
-        cards.add(new Card("ASUS TUF RTX 3060 Ti", "https://www.amazon.com/dp/B083Z5P6TX", AMAZON));
-        cards.add(new Card("MSI RTX 3060 Ti Gaming X Trio", "https://www.amazon.com/dp/B08P2D3JSG", AMAZON));
-        cards.add(new Card("MSI RTX 3060 Ti Ventus 2X OC", "https://www.amazon.com/dp/B08P2DQ28S", AMAZON));
-        cards.add(new Card("Zotac RTX 3060 Ti Twin Edge", "https://www.amazon.com/dp/B08P3XJLJJ", AMAZON));
-        cards.add(new Card("Zotac RTX 3060 Ti Twin Edge OC", "https://www.amazon.com/dp/B08P3V572B", AMAZON));
-        cards.add(new Card("ASUS KO RTX 3060 Ti OC", "https://www.amazon.com/dp/B08P2D1JZZ", AMAZON));
-        return cards;
+        ArrayList<Card> result = new ArrayList<Card>();
+        JsonReader reader = null;
+        try
+        {
+            reader = new JsonReader(new FileReader("src/main/resources/cards.json"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
+
+        JsonArray amazon = json.getAsJsonArray("amazon");
+        for (int i = 0; i < amazon.size(); i++)
+        {
+            JsonObject o = amazon.get(i).getAsJsonObject();
+            Card c = new Card(o.get("name").getAsString(), o.get("link").getAsString(), AMAZON);
+            result.add(c);
+        }
+
+        return result;
     }
 
 }

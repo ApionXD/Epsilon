@@ -1,0 +1,93 @@
+{
+  "amazon":
+          [
+              {
+                "name": "ASUS Dual NVIDIA GeForce RTX 3060 Ti OC Edition",
+                "link": "https://www.amazon.com/dp/B08P2HBBLX"
+              },
+              {
+                "name": "Gigabyte RTX 3060 Ti Gaming OC",
+                "link": "https://www.amazon.com/dp/B08NYP7KG6"
+              },
+              {
+                "name": "Gigabyte RTX 3060 Ti Gaming OC PRO",
+                "link": "https://www.amazon.com/dp/B08NYPLXPJ"
+              },
+              {
+                "name": "Gigabyte RTX 3060 Ti Eagle",
+                "link": "https://www.amazon.com/dp/B08NYNJ6RC"
+              },
+              {
+                "name": "ASUS TUF RTX 3060 Ti",
+                "link": "https://www.amazon.com/dp/B083Z5P6TX"
+              },
+              {
+                "name": "MSI RTX 3060 Ti Gaming X Trio",
+                "link": "https://www.amazon.com/dp/B08P2D3JSG"
+              },
+              {
+                "name": "MSI RTX 3060 Ti Ventus 2X OC",
+                "link": "https://www.amazon.com/dp/B08P2DQ28S"
+              },
+              {
+                "name": "Zotac RTX 3060 Ti Twin Edge",
+                "link": "https://www.amazon.com/dp/B08P3XJLJJ"
+              },
+              {
+                "name": "Zotac RTX 3060 Ti Twin Edge OC",
+                "link": "https://www.amazon.com/dp/B08P3V572B"
+              },
+              {
+                "name": "ASUS KO RTX 3060 Ti OC",
+                "link": "https://www.amazon.com/dp/B08P2D1JZZ"
+              },
+              {
+                "name": "ASUS ROG Strix RTX 3060 Ti OC",
+                "link": "https://www.amazon.com/dp/B083Z7TR8Z"
+              },
+              {
+                "name": "EVGA RTX 3060 Ti FTW Ultra",
+                "link": "https://www.amazon.com/dp/B08P2H5LW2"
+              },
+              {
+                "name": "Gigabyte RTX 3060 Ti Eagle OC",
+                "link": "https://www.amazon.com/dp/B08P2D1JZZ"
+              },
+              {
+                "name": "ASUS Dual RTX 3070 OC",
+                "link": "https://www.amazon.com/dp/B08L8LG4M3"
+              },
+              {
+                "name": "ASUS Dual RTX 3070",
+                "link": "https://www.amazon.com/dp/B08L8HPKR6"
+              },
+              {
+                "name": "EVGA RTX 3070 XC3 Ultra",
+                "link": "https://www.amazon.com/dp/B08LW46GH2"
+              },
+              {
+                "name": "ASUS ROG Strix RTX 3070",
+                "link": "https://www.amazon.com/dp/B08L8JNTXQ"
+              },
+              {
+                "name": "ASUS TUF RTX 3070 OC",
+                "link": "https://www.amazon.com/dp/B08L8KC1J7"
+              },
+              {
+                "name": "Gigabyte RTX 3070 OC ",
+                "link": "https://www.amazon.com/dp/B08KY266MG"
+              },
+              {
+                "name": "MSI RTX 3070 Gaming X Trio",
+                "link": "https://www.amazon.com/dp/B08KWN2LZG"
+              },
+              {
+                "name": "PNY RTX 3070 XLR8 Gaming",
+                "link": "https://www.amazon.com/dp/B08HBJB7YD"
+              },
+              {
+                "name": "MSI RTX 3070 Ventus 2X OC",
+                "link": "https://www.amazon.com/dp/B08L8JNTXQ"
+              }
+          ]
+}
