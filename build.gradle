@@ -4,15 +4,15 @@ plugins {
 }
 
 group 'com.apion'
-version '1.0-SNAPSHOT'
-mainClassName = 'Main'
+version '1.0.1-SNAPSHOT'
+mainClassName = 'Epsilon'
 repositories {
     mavenCentral()
 }
 jar {
     manifest {
         attributes(
-                'Main-Class': 'Main'
+                'Main-Class': 'Epsilon'
         )
     }
     from {

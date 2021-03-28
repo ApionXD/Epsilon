@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 
-public class Main
+public class Epsilon
 {
     public static final String CONF_FILE = "conf.json";
     public static final String LINK_FILE = "cards.json";
@@ -99,7 +99,7 @@ public class Main
 
         try
         {
-            Path current = Paths.get(DEVEL_PATH + CONF_FILE);
+            Path current = Paths.get(CONF_FILE);
             String s = current.toAbsolutePath().toString();
             reader = new JsonReader(new FileReader(s));
         }
@@ -108,7 +108,7 @@ public class Main
             try
             {
                 System.out.println("Config file not found, checking to see if you're in a development environment");
-                reader = new JsonReader(new FileReader(CONF_FILE));
+                reader = new JsonReader(new FileReader(DEVEL_PATH + CONF_FILE));
             }
             catch (Exception f)
             {
