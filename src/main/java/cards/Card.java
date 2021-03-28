@@ -36,7 +36,7 @@ public class Card implements Runnable
             {
                 System.out.println("Card: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + shop.getPrice(this));
             }
-            else if (verbosity == 2)
+            else if (verbosity >= 1)
             {
                 if (status == -1)
                 {

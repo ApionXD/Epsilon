@@ -45,7 +45,7 @@ public class Epsilon
             }
             try
             {
-                Thread.sleep(2500);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e)
             {
