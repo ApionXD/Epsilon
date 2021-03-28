@@ -2,8 +2,253 @@
   "amazon":
           [
             {
-              "name": "Mask Test",
-              "link": "https://www.amazon.com/dp/B0002YKBV2"
+              "name": "ASUS RTX 3060ti dual",
+              "link": "https://www.amazon.com/dp/B08P2HBBLX"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti gaming oc",
+              "link": "https://www.amazon.com/dp/B08NYP7KG6"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti gaming oc pro",
+              "link": "https://www.amazon.com/dp/B08NYPLXPJ"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti eagle",
+              "link": "https://www.amazon.com/dp/B08NYNJ6RC"
+            },
+            {
+              "name": "ASUS RTX 3060ti tuf",
+              "link": "https://www.amazon.com/dp/B083Z5P6TX"
+            },
+            {
+              "name": "MSI RTX 3060ti gaming x trio",
+              "link": "https://www.amazon.com/dp/B08P2D3JSG"
+            },
+            {
+              "name": "MSI RTX 3060ti ventus 2x",
+              "link": "https://www.amazon.com/dp/B08P2DQ28S"
+            },
+            {
+              "name": "ZOTAC RTX 3060ti twin edge oc",
+              "link": "https://www.amazon.com/dp/B08P3XJLJJ"
+            },
+            {
+              "name": "ZOTAC RTX 3060ti twin edge",
+              "link": "https://www.amazon.com/dp/B08P3V572B"
+            },
+            {
+              "name": "ASUS RTX 3060ti ko",
+              "link": "https://www.amazon.com/dp/B08P2D1JZZ"
+            },
+            {
+              "name": "ASUS RTX 3060ti strix",
+              "link": "https://www.amazon.com/dp/B083Z7TR8Z"
+            },
+            {
+              "name": "EVGA RTX 3060ti ftw3",
+              "link": "https://www.amazon.com/dp/B08P2H5LW2"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti eagle oc",
+              "link": "https://www.amazon.com/dp/B08NYPKW1Z"
+            },
+            {
+              "name": "ASUS RTX 3070 dual",
+              "link": "https://www.amazon.com/dp/B08L8LG4M3"
+            },
+            {
+              "name": "ASUS RTX 3070 dual",
+              "link": "https://www.amazon.com/dp/B08L8HPKR6"
+            },
+            {
+              "name": "EVGA RTX 3070 xc3 black",
+              "link": "https://www.amazon.com/dp/B08LW46GH2"
+            },
+            {
+              "name": "ASUS RTX 3070 strix",
+              "link": "https://www.amazon.com/dp/B08L8JNTXQ"
+            },
+            {
+              "name": "ASUS RTX 3070 tuf",
+              "link": "https://www.amazon.com/dp/B08L8KC1J7"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 gaming oc",
+              "link": "https://www.amazon.com/dp/B08KY266MG"
+            },
+            {
+              "name": "MSI RTX 3070 gaming",
+              "link": "https://www.amazon.com/dp/B08KWN2LZG"
+            },
+            {
+              "name": "PNY RTX 3070 xlr8 revel",
+              "link": "https://www.amazon.com/dp/B08HBJB7YD"
+            },
+            {
+              "name": "PNY RTX 3070 xlr8 uprising",
+              "link": "https://www.amazon.com/dp/B08HBF5L3K"
+            },
+            {
+              "name": "MSI RTX 3070 ventus 2x oc",
+              "link": "https://www.amazon.com/dp/B08KWPDXJZ"
+            },
+            {
+              "name": "MSI RTX 3070 ventus 3x oc",
+              "link": "https://www.amazon.com/dp/B08KWLMZV4"
+            },
+            {
+              "name": "ZOTAC RTX 3070 twin edge oc",
+              "link": "https://www.amazon.com/dp/B08LF1CWT2"
+            },
+            {
+              "name": "ZOTAC RTX 3070 gaming",
+              "link": "https://www.amazon.com/dp/B08LF32LJ6"
+            },
+            {
+              "name": "EVGA RTX 3070 xc3 ultra",
+              "link": "https://www.amazon.com/dp/B08L8L71SM"
+            },
+            {
+              "name": "EVGA RTX 3060 xc gaming",
+              "link": "https://www.amazon.com/dp/B08WM28PVH"
+            },
+            {
+              "name": "EVGA RTX 3070 ftw3 ultra",
+              "link": "https://www.amazon.com/dp/B08L8L9TCZ"
+            },
+            {
+              "name": "EVGA RTX 3070 xc3 black",
+              "link": "https://www.amazon.com/dp/B08LW46GH2"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 gaming oc",
+              "link": "https://www.amazon.com/dp/B08KY266MG"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 vision oc",
+              "link": "https://www.amazon.com/dp/B08M13DXSZ"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 gaming oc",
+              "link": "https://www.amazon.com/dp/B08M4YFNX2"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 eagle",
+              "link": "https://www.amazon.com/dp/B08KXZV626"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 eagle oc",
+              "link": "https://www.amazon.com/dp/B08KY322TH"
+            },
+            {
+              "name": "PNY RTX 3080 xlr8 revel",
+              "link": "https://www.amazon.com/dp/B08HBR7QBM"
+            },
+            {
+              "name": "PNY RTX 3080 xlr8 revel",
+              "link": "https://www.amazon.com/dp/B08HBTJMLJ"
+            },
+            {
+              "name": "MSI RTX 3080 gaming x trio",
+              "link": "https://www.amazon.com/dp/B08HR7SV3M"
+            },
+            {
+              "name": "EVGA RTX 3080 ftw3 ultra",
+              "link": "https://www.amazon.com/dp/B08HR3Y5GQ"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3 ultra",
+              "link": "https://www.amazon.com/dp/B08HR55YB5"
+            },
+            {
+              "name": "EVGA RTX 3080 ftw3",
+              "link": "https://www.amazon.com/dp/B08HR3DPGW"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3",
+              "link": "https://www.amazon.com/dp/B08HR4RJ3Q"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3 black",
+              "link": "https://www.amazon.com/dp/B08HR6FMF3"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 gaming oc",
+              "link": "https://www.amazon.com/dp/B08HJTH61J"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 eagle oc",
+              "link": "https://www.amazon.com/dp/B08HJS2JLJ"
+            },
+            {
+              "name": "ASUS RTX 3080 tuf oc",
+              "link": "https://www.amazon.com/dp/B08HH5WF97"
+            },
+            {
+              "name": "ASUS RTX 3080 tuf",
+              "link": "https://www.amazon.com/dp/B08HHDP9DW"
+            },
+            {
+              "name": "ASUS RTX 3080 strix oc",
+              "link": "https://www.amazon.com/dp/B08J6F174Z"
+            },
+            {
+              "name": "ASUS RTX 3090 strix oc",
+              "link": "https://www.amazon.com/dp/B08J6GMWCQ"
+            },
+            {
+              "name": "MSI RTX 3080 ventus 3x oc",
+              "link": "https://www.amazon.com/dp/B08HR5SXPS"
+            },
+            {
+              "name": "ZOTAC RTX 3080 trinity",
+              "link": "https://www.amazon.com/dp/B08HJNKT3P"
+            },
+            {
+              "name": "ZOTAC RTX 3080 trinity oc",
+              "link": "https://www.amazon.com/dp/B08HVV2P4Z"
+            },
+            {
+              "name": "ZOTAC RTX 3090 trinity",
+              "link": "https://www.amazon.com/dp/B08HJQ182D"
+            },
+            {
+              "name": "PNY RTX 3090 xlr8 revel",
+              "link": "https://www.amazon.com/dp/B08HBQWBHH"
+            },
+            {
+              "name": "PNY RTX 3090 xlr8 revel",
+              "link": "https://www.amazon.com/dp/B08HBVX53D"
+            },
+            {
+              "name": "MSI RTX 3090 gaming x trio",
+              "link": "https://www.amazon.com/dp/B08HRBW6VB"
+            },
+            {
+              "name": "MSI RTX 3090 ventus 3x",
+              "link": "https://www.amazon.com/dp/B08HR9D2JS"
+            },
+            {
+              "name": "EVGA RTX 3090 ftw3 ultra",
+              "link": "https://www.amazon.com/dp/B08J5F3G18"
+            },
+            {
+              "name": "GIGABYTE RTX 3090 gaming oc",
+              "link": "https://www.amazon.com/dp/B08HJRF2CN"
+            },
+            {
+              "name": "GIGABYTE RTX 3090 eagle oc",
+              "link": "https://www.amazon.com/dp/B08HJPDJTY"
+            },
+            {
+              "name": "ASUS RTX 3090 tuf oc",
+              "link": "https://www.amazon.com/dp/B08HJGNJ81"
+            },
+            {
+              "name": "ASUS RTX 3090 tuf oc",
+              "link": "https://www.amazon.com/dp/B08HJLLF7G"
             }
+
           ]
 }

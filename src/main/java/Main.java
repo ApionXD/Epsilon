@@ -18,6 +18,7 @@ public class Main
 {
     public static final String CONF_FILE = "conf.json";
     public static final String LINK_FILE = "cards.json";
+    public static final String DEVEL_PATH = "src/main/resources/";
     public static ArrayList<Card> cards;
 
     public static int amazonTimeout;
@@ -69,7 +70,7 @@ public class Main
             try
             {
                 System.out.println("Link file not found, checking to see if you're in a development environment");
-                reader = new JsonReader(new FileReader(LINK_FILE));
+                reader = new JsonReader(new FileReader(DEVEL_PATH + LINK_FILE));
             }
             catch (Exception f)
             {
@@ -98,7 +99,7 @@ public class Main
 
         try
         {
-            Path current = Paths.get(CONF_FILE);
+            Path current = Paths.get(DEVEL_PATH + CONF_FILE);
             String s = current.toAbsolutePath().toString();
             reader = new JsonReader(new FileReader(s));
         }
