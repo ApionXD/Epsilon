@@ -4,14 +4,20 @@ import com.google.gson.stream.JsonReader;
 import shops.Amazon;
 import shops.Shop;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 
 public class Main
 {
-
+    public static final String CONF_FILE = "conf.json";
+    public static final String LINK_FILE = "cards.json";
     public static ArrayList<Card> cards;
 
     public static int amazonTimeout;
@@ -51,13 +57,24 @@ public class Main
     {
         ArrayList<Card> result = new ArrayList<Card>();
         JsonReader reader = null;
+
         try
         {
-            reader = new JsonReader(new FileReader("src/main/resources/cards.json"));
+            Path current = Paths.get(LINK_FILE);
+            String s = current.toAbsolutePath().toString();
+            reader = new JsonReader(new FileReader(s));
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            try
+            {
+                System.out.println("Link file not found, checking to see if you're in a development environment");
+                reader = new JsonReader(new FileReader(LINK_FILE));
+            }
+            catch (Exception f)
+            {
+                System.out.println("Can't find config file, make sure that conf.json is in your current directory!");
+            }
         }
         JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
 
@@ -78,13 +95,24 @@ public class Main
     public static void readConfig()
     {
         JsonReader reader = null;
+
         try
         {
-            reader = new JsonReader(new FileReader("src/main/resources/conf.json"));
+            Path current = Paths.get(CONF_FILE);
+            String s = current.toAbsolutePath().toString();
+            reader = new JsonReader(new FileReader(s));
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            try
+            {
+                System.out.println("Config file not found, checking to see if you're in a development environment");
+                reader = new JsonReader(new FileReader(CONF_FILE));
+            }
+            catch (Exception f)
+            {
+                System.out.println("Can't find config file, make sure that conf.json is in your current directory!");
+            }
         }
         JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
         outputVerbosity = json.get("OUTPUT_VERBOSITY").getAsInt();
@@ -103,7 +131,7 @@ public class Main
         JsonReader reader = null;
         try
         {
-            reader = new JsonReader(new FileReader("src/main/resources/links.json"));
+            reader = new JsonReader(new FileReader("links.json"));
         }
         catch (Exception e)
         {
