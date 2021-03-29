@@ -1,15 +1,9 @@
 package cards;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
 import lombok.Getter;
 import shops.Shop;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Map;
+import java.io.IOException;
 
 @Getter
 public class Card implements Runnable
@@ -18,6 +12,7 @@ public class Card implements Runnable
     private String link;
     private Shop shop;
     private int verbosity;
+    private static int currentRequests = 0;
     public Card(String name, String link, Shop shop, int verbosity)
     {
         this.name = name;
@@ -25,16 +20,23 @@ public class Card implements Runnable
         this.shop = shop;
         this.verbosity = verbosity;
     }
-
     @Override
     public void run()
     {
         while(true)
         {
-            int status = shop.getCurrentStatus(this);
-            if (status == 1 && verbosity == 1)
+            try
             {
-                System.out.println("Card: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + shop.getPrice(this));
+                shop.checkPage(this);
+            }
+            catch (IOException e)
+            {
+                System.out.println("There was an error getting " + this.getLink());
+            }
+            int status = shop.checkCurrentStatus(this);
+            if (status == 1 && verbosity == 0)
+            {
+                System.out.println("Card: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + shop.checkPrice(this));
             }
             else if (verbosity >= 1)
             {

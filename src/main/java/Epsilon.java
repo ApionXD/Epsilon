@@ -2,6 +2,7 @@ import cards.Card;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import shops.Amazon;
+import shops.BestBuy;
 import shops.Shop;
 
 import java.io.BufferedReader;
@@ -23,9 +24,14 @@ public class Epsilon
 
     public static int amazonTimeout;
     public static boolean amazonEnabled;
+    public static int bestBuyTimeout;
+    public static boolean bestBuyEnabled;
+    public static String bestBuyKey;
+    public static boolean bestBuyUseKey;
     public static int outputVerbosity;
 
     public static Shop amazon;
+    public static Shop bestBuy;
 
     public static void main(String[] args)
     {
@@ -33,6 +39,10 @@ public class Epsilon
         if (amazonEnabled)
         {
             amazon = new Amazon(amazonTimeout);
+        }
+        if (bestBuyEnabled)
+        {
+            bestBuy= new BestBuy(bestBuyTimeout, bestBuyKey);
         }
         cards = getCardList();
         for (int i = 0; i < cards.size(); i++)
@@ -45,14 +55,13 @@ public class Epsilon
             }
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             }
             catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
         }
-
     }
     public static ArrayList<Card> getCardList()
     {
@@ -87,6 +96,24 @@ public class Epsilon
                 JsonObject o = amazonObject.get(i).getAsJsonObject();
                 Card c = new Card(o.get("name").getAsString(), o.get("link").getAsString(), amazon, outputVerbosity);
                 result.add(c);
+            }
+        }
+        if (bestBuyEnabled)
+        {
+            JsonArray bestBuyObject = json.getAsJsonArray("best_buy");
+            for (int i = 0; i < bestBuyObject.size(); i++)
+            {
+                JsonObject o = bestBuyObject.get(i).getAsJsonObject();
+                if (o.has("sku"))
+                {
+                    Card c = new Card(o.get("name").getAsString(), "https://api.bestbuy.com/v1/products/" + o.get("sku").getAsString() + ".json?show=sku,name,salePrice,orderable&apiKey=" , bestBuy, outputVerbosity);
+                    result.add(c);
+                }
+                else if (o.has("link"))
+                {
+                    System.out.println("Epsilon doesn't support BestBuy links yet! Please use the SKU of the product instead.");
+                }
+
             }
         }
 
@@ -125,9 +152,20 @@ public class Epsilon
         }
         amazonTimeout = json.get("AMAZON_TIMEOUT").getAsInt();
         amazonEnabled = json.get("AMAZON_ENABLED").getAsBoolean();
+        bestBuyTimeout = json.get("BEST_BUY_TIMEOUT").getAsInt();
+        bestBuyEnabled = json.get("BEST_BUY_ENABLED").getAsBoolean();
+        bestBuyUseKey = json.get("BEST_BUY_USE_KEY").getAsBoolean();
+        if (bestBuyUseKey)
+        {
+            bestBuyKey = json.get("BEST_BUY_KEY").getAsString();
+        }
+        else
+        {
+            bestBuyEnabled = false;
+        }
 
     }
-    public static void parseLinks()
+    public static void parseAmazonLinks()
     {
         JsonReader reader = null;
         try
@@ -151,6 +189,36 @@ public class Epsilon
                 output.add("name", new JsonPrimitive(name));
                 String link = o.get("url").getAsString();
                 output.add("link", new JsonPrimitive(link));
+                outputArray.add(output);
+            }
+        }
+        System.out.println(outputArray.isJsonNull());
+        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(outputArray));
+    }
+    public static void parseBestBuyLinks()
+    {
+        JsonReader reader = null;
+        try
+        {
+            reader = new JsonReader(new FileReader(DEVEL_PATH + "links.json"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
+        JsonArray array = json.get("links").getAsJsonArray();
+        JsonArray outputArray = new JsonArray();
+        for (int i = 0; i < array.size(); i++)
+        {
+            JsonObject o = array.get(i).getAsJsonObject();
+            JsonObject output = new JsonObject();
+            if (o.get("series").getAsString().equals("3060") || o.get("series").getAsString().equals("3060ti") || o.get("series").getAsString().equals("3070") || o.get("series").getAsString().equals("3080") || o.get("series").getAsString().equals("3090"))
+            {
+                String name = o.get("brand").getAsString().toUpperCase() + " RTX " + o.get("series").getAsString() + " " + o.get("model").getAsString();
+                output.add("name", new JsonPrimitive(name));
+                String link = o.get("url").getAsString().substring(32, 39);
+                output.add("sku", new JsonPrimitive(link));
                 outputArray.add(output);
             }
         }

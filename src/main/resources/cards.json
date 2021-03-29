@@ -249,6 +249,204 @@
               "name": "ASUS RTX 3090 tuf oc",
               "link": "https://www.amazon.com/dp/B08HJLLF7G"
             }
-
+          ],
+  "best_buy":
+          [
+            {
+              "name": "NVIDIA RTX 3070 founders edition",
+              "sku": "6429442"
+            },
+            {
+              "name": "EVGA RTX 3070 xc3 black",
+              "sku": "6439300"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 eagle",
+              "sku": "6437912"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 gaming oc",
+              "sku": "6437909"
+            },
+            {
+              "name": "PNY RTX 3070 dual fan",
+              "sku": "6432654"
+            },
+            {
+              "name": "PNY RTX 3070 xlr8 revel",
+              "sku": "6432653"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 aorus",
+              "sku": "6439384"
+            },
+            {
+              "name": "GIGABYTE RTX 3070 vision",
+              "sku": "6439385"
+            },
+            {
+              "name": "ASUS RTX 3070 tuf",
+              "sku": "6439128"
+            },
+            {
+              "name": "MSI RTX 3070 ventus 3x oc",
+              "sku": "6438278"
+            },
+            {
+              "name": "ASUS RTX 3070 strix",
+              "sku": "6439127"
+            },
+            {
+              "name": "EVGA RTX 3070 ftw3 ultra",
+              "sku": "6439301"
+            },
+            {
+              "name": "EVGA RTX 3070 xc3 ultra",
+              "sku": "6439299"
+            },
+            {
+              "name": "NVIDIA RTX 3080 founders edition",
+              "sku": "6429440"
+            },
+            {
+              "name": "ASUS RTX 3080 strix",
+              "sku": "6432445"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3 black",
+              "sku": "6432399"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3",
+              "sku": "6436194"
+            },
+            {
+              "name": "EVGA RTX 3080 xc3 ultra",
+              "sku": "6432400"
+            },
+            {
+              "name": "EVGA RTX 3080 ftw3 ultra",
+              "sku": "6436196"
+            },
+            {
+              "name": "EVGA RTX 3080 ftw3",
+              "sku": "6436191"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 gaming oc",
+              "sku": "6430620"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 eagle oc",
+              "sku": "6430621"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 vision oc",
+              "sku": "6436219"
+            },
+            {
+              "name": "GIGABYTE RTX 3080 aorus master",
+              "sku": "6436223"
+            },
+            {
+              "name": "MSI RTX 3080 ventus 3x oc",
+              "sku": "6430175"
+            },
+            {
+              "name": "PNY RTX 3080 xlr8 revel",
+              "sku": "6432655"
+            },
+            {
+              "name": "PNY RTX 3080 xlr8 revel",
+              "sku": "6432658"
+            },
+            {
+              "name": "NVIDIA RTX 3090 founders edition",
+              "sku": "6429434"
+            },
+            {
+              "name": "ASUS RTX 3090 strix",
+              "sku": "6432447"
+            },
+            {
+              "name": "ASUS RTX 3090 tuf",
+              "sku": "6432446"
+            },
+            {
+              "name": "MSI RTX 3090 ventus 3x oc",
+              "sku": "6430215"
+            },
+            {
+              "name": "GIGABYTE RTX 3090 gaming",
+              "sku": "6430623"
+            },
+            {
+              "name": "GIGABYTE RTX 3090 eagle",
+              "sku": "6430624"
+            },
+            {
+              "name": "EVGA RTX 3090 xc3",
+              "sku": "6434363"
+            },
+            {
+              "name": "EVGA RTX 3090 ftw3",
+              "sku": "6436193"
+            },
+            {
+              "name": "EVGA RTX 3090 ftw3 ultra",
+              "sku": "6436192"
+            },
+            {
+              "name": "PNY RTX 3090 xlr8 revel",
+              "sku": "6432657"
+            },
+            {
+              "name": "NVIDIA RTX 3060ti founders edition",
+              "sku": "6439402"
+            },
+            {
+              "name": "MSI RTX 3060ti ventus 2x",
+              "sku": "6441172"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti gaming oc",
+              "sku": "6442484"
+            },
+            {
+              "name": "GIGABYTE RTX 3060ti eagle",
+              "sku": "6442485"
+            },
+            {
+              "name": "MSI RTX 3060 ventus 3x",
+              "sku": "6452940"
+            },
+            {
+              "name": "EVGA RTX 3060 xc gaming",
+              "sku": "6454328"
+            },
+            {
+              "name": "PNY RTX 3060ti xlr8 uprising",
+              "sku": "6446660"
+            },
+            {
+              "name": "EVGA RTX 3060ti xc gaming",
+              "sku": "6444445"
+            },
+            {
+              "name": "EVGA RTX 3060ti ftw3",
+              "sku": "6444444"
+            },
+            {
+              "name": "EVGA RTX 3060ti ftw3",
+              "sku": "6444449"
+            },
+            {
+              "name": "PNY RTX 3060 dual fan",
+              "sku": "6454319"
+            },
+            {
+              "name": "PNY RTX 3060 single fan",
+              "sku": "6454318"
+            }
           ]
 }

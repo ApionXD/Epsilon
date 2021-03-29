@@ -3,7 +3,8 @@ package shops;
 import cards.Card;
 import lombok.Getter;
 
-import java.util.ArrayList;
+import java.io.IOException;
+
 @Getter
 
 public abstract class Shop
@@ -20,6 +21,7 @@ public abstract class Shop
     {
 
     }
-    public abstract int getCurrentStatus(Card cardToCheck);
-    public abstract double getPrice(Card cardToCheck);
+    public abstract int checkCurrentStatus(Card cardToCheck);
+    public abstract double checkPrice(Card cardToCheck);
+    public abstract void checkPage(Card cardToCheck) throws IOException;
 }

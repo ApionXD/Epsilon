@@ -2,684 +2,473 @@
   "links":
   [
     {
-      "brand": "test:brand",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B089KV4YYX&Quantity.1=1",
-      "model": "test:model",
-      "series": "test:series",
-      "url": "https://www.amazon.com/dp/B089KV4YYX"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P2HBBLX&Quantity.1=1",
-      "model": "dual",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P2HBBLX"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NYP7KG6&Quantity.1=1",
-      "model": "gaming oc",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08NYP7KG6"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NYPLXPJ&Quantity.1=1",
-      "model": "gaming oc pro",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08NYPLXPJ"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NYNJ6RC&Quantity.1=1",
-      "model": "eagle",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08NYNJ6RC"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B083Z5P6TX&Quantity.1=1",
-      "model": "tuf",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B083Z5P6TX"
-    },
-    {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P2D3JSG&Quantity.1=1",
-      "model": "gaming x trio",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P2D3JSG"
-    },
-    {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P2DQ28S&Quantity.1=1",
-      "model": "ventus 2x",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P2DQ28S"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P3XJLJJ&Quantity.1=1",
-      "model": "twin edge oc",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P3XJLJJ"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P3V572B&Quantity.1=1",
-      "model": "twin edge",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P3V572B"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P2D1JZZ&Quantity.1=1",
-      "model": "ko",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P2D1JZZ"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B083Z7TR8Z&Quantity.1=1",
-      "model": "strix",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B083Z7TR8Z"
+      "brand": "nvidia",
+      "cartUrl": "https://api.bestbuy.com/click/-/6429442/cart",
+      "model": "founders edition",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6429442/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P2H5LW2&Quantity.1=1",
-      "model": "ftw3",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08P2H5LW2"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NYPKW1Z&Quantity.1=1",
-      "model": "eagle oc",
-      "series": "3060ti",
-      "url": "https://www.amazon.com/dp/B08NYPKW1Z"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8LG4M3&Quantity.1=1",
-      "model": "dual",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8LG4M3"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8HPKR6&Quantity.1=1",
-      "model": "dual",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8HPKR6"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08LW46GH2&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439300/cart",
       "model": "xc3 black",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08LW46GH2"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8JNTXQ&Quantity.1=1",
-      "model": "strix",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8JNTXQ"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8KC1J7&Quantity.1=1",
-      "model": "tuf",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8KC1J7"
+      "url": "https://api.bestbuy.com/click/-/6439300/pdp"
     },
     {
       "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KY266MG&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6437912/cart",
+      "model": "eagle",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6437912/pdp"
+    },
+    {
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6437909/cart",
       "model": "gaming oc",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KY266MG"
-    },
-    {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KWN2LZG&Quantity.1=1",
-      "model": "gaming",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KWN2LZG"
+      "url": "https://api.bestbuy.com/click/-/6437909/pdp"
     },
     {
       "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBJB7YD&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432654/cart",
+      "model": "dual fan",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6432654/pdp"
+    },
+    {
+      "brand": "pny",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432653/cart",
       "model": "xlr8 revel",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08HBJB7YD"
+      "url": "https://api.bestbuy.com/click/-/6432653/pdp"
     },
     {
-      "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBF5L3K&Quantity.1=1",
-      "model": "xlr8 uprising",
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439384/cart",
+      "model": "aorus",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08HBF5L3K"
+      "url": "https://api.bestbuy.com/click/-/6439384/pdp"
+    },
+    {
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439385/cart",
+      "model": "vision",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6439385/pdp"
+    },
+    {
+      "brand": "asus",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439128/cart",
+      "model": "tuf",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6439128/pdp"
     },
     {
       "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KWPDXJZ&Quantity.1=1",
-      "model": "ventus 2x oc",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KWPDXJZ"
-    },
-    {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KWLMZV4&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6438278/cart",
       "model": "ventus 3x oc",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KWLMZV4"
+      "url": "https://api.bestbuy.com/click/-/6438278/pdp"
     },
     {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08LF1CWT2&Quantity.1=1",
-      "model": "twin edge oc",
+      "brand": "asus",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439127/cart",
+      "model": "strix",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08LF1CWT2"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08LF32LJ6&Quantity.1=1",
-      "model": "gaming",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08LF32LJ6"
+      "url": "https://api.bestbuy.com/click/-/6439127/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8L71SM&Quantity.1=1",
-      "model": "xc3 ultra",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8L71SM"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08WM28PVH&Quantity.1=1",
-      "model": "xc gaming",
-      "series": "3060",
-      "url": "https://www.amazon.com/dp/B08WM28PVH"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08L8L9TCZ&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439301/cart",
       "model": "ftw3 ultra",
       "series": "3070",
-      "url": "https://www.amazon.com/dp/B08L8L9TCZ"
+      "url": "https://api.bestbuy.com/click/-/6439301/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08LW46GH2&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439299/cart",
+      "model": "xc3 ultra",
+      "series": "3070",
+      "url": "https://api.bestbuy.com/click/-/6439299/pdp"
+    },
+    {
+      "brand": "nvidia",
+      "cartUrl": "https://api.bestbuy.com/click/-/6429440/cart",
+      "model": "founders edition",
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6429440/pdp"
+    },
+    {
+      "brand": "asus",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432445/cart",
+      "model": "strix",
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6432445/pdp"
+    },
+    {
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432399/cart",
       "model": "xc3 black",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08LW46GH2"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KY266MG&Quantity.1=1",
-      "model": "gaming oc",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KY266MG"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08M13DXSZ&Quantity.1=1",
-      "model": "vision oc",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08M13DXSZ"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08M4YFNX2&Quantity.1=1",
-      "model": "gaming oc",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08M4YFNX2"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KXZV626&Quantity.1=1",
-      "model": "eagle",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KXZV626"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08KY322TH&Quantity.1=1",
-      "model": "eagle oc",
-      "series": "3070",
-      "url": "https://www.amazon.com/dp/B08KY322TH"
-    },
-    {
-      "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBR7QBM&Quantity.1=1",
-      "model": "xlr8 revel",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HBR7QBM"
-    },
-    {
-      "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBTJMLJ&Quantity.1=1",
-      "model": "xlr8 revel",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HBTJMLJ"
-    },
-    {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR7SV3M&Quantity.1=1",
-      "model": "gaming x trio",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR7SV3M"
+      "url": "https://api.bestbuy.com/click/-/6432399/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR3Y5GQ&Quantity.1=1",
-      "model": "ftw3 ultra",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR3Y5GQ"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR55YB5&Quantity.1=1",
-      "model": "xc3 ultra",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR55YB5"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR3DPGW&Quantity.1=1",
-      "model": "ftw3",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR3DPGW"
-    },
-    {
-      "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR4RJ3Q&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436194/cart",
       "model": "xc3",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR4RJ3Q"
+      "url": "https://api.bestbuy.com/click/-/6436194/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR6FMF3&Quantity.1=1",
-      "model": "xc3 black",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432400/cart",
+      "model": "xc3 ultra",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR6FMF3"
+      "url": "https://api.bestbuy.com/click/-/6432400/pdp"
+    },
+    {
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436196/cart",
+      "model": "ftw3 ultra",
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6436196/pdp"
+    },
+    {
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436191/cart",
+      "model": "ftw3",
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6436191/pdp"
     },
     {
       "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJTH61J&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430620/cart",
       "model": "gaming oc",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HJTH61J"
+      "url": "https://api.bestbuy.com/click/-/6430620/pdp"
     },
     {
       "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJS2JLJ&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430621/cart",
       "model": "eagle oc",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HJS2JLJ"
+      "url": "https://api.bestbuy.com/click/-/6430621/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HH5WF97&Quantity.1=1",
-      "model": "tuf oc",
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436219/cart",
+      "model": "vision oc",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HH5WF97"
+      "url": "https://api.bestbuy.com/click/-/6436219/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HHDP9DW&Quantity.1=1",
-      "model": "tuf",
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436223/cart",
+      "model": "aorus master",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HHDP9DW"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08J6F174Z&Quantity.1=1",
-      "model": "strix oc",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08J6F174Z"
-    },
-    {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08J6GMWCQ&Quantity.1=1",
-      "model": "strix oc",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08J6GMWCQ"
+      "url": "https://api.bestbuy.com/click/-/6436223/pdp"
     },
     {
       "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR5SXPS&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430175/cart",
       "model": "ventus 3x oc",
       "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HR5SXPS"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJNKT3P&Quantity.1=1",
-      "model": "trinity",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HJNKT3P"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HVV2P4Z&Quantity.1=1",
-      "model": "trinity oc",
-      "series": "3080",
-      "url": "https://www.amazon.com/dp/B08HVV2P4Z"
-    },
-    {
-      "brand": "zotac",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJQ182D&Quantity.1=1",
-      "model": "trinity",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HJQ182D"
+      "url": "https://api.bestbuy.com/click/-/6430175/pdp"
     },
     {
       "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBQWBHH&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432655/cart",
       "model": "xlr8 revel",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HBQWBHH"
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6432655/pdp"
     },
     {
       "brand": "pny",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HBVX53D&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432658/cart",
       "model": "xlr8 revel",
+      "series": "3080",
+      "url": "https://api.bestbuy.com/click/-/6432658/pdp"
+    },
+    {
+      "brand": "nvidia",
+      "cartUrl": "https://api.bestbuy.com/click/-/6429434/cart",
+      "model": "founders edition",
       "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HBVX53D"
+      "url": "https://api.bestbuy.com/click/-/6429434/pdp"
+    },
+    {
+      "brand": "asus",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432447/cart",
+      "model": "strix",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6432447/pdp"
+    },
+    {
+      "brand": "asus",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432446/cart",
+      "model": "tuf",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6432446/pdp"
     },
     {
       "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HRBW6VB&Quantity.1=1",
-      "model": "gaming x trio",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430215/cart",
+      "model": "ventus 3x oc",
       "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HRBW6VB"
+      "url": "https://api.bestbuy.com/click/-/6430215/pdp"
     },
     {
-      "brand": "msi",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HR9D2JS&Quantity.1=1",
-      "model": "ventus 3x",
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430623/cart",
+      "model": "gaming",
       "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HR9D2JS"
+      "url": "https://api.bestbuy.com/click/-/6430623/pdp"
+    },
+    {
+      "brand": "gigabyte",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430624/cart",
+      "model": "eagle",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6430624/pdp"
     },
     {
       "brand": "evga",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08J5F3G18&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6434363/cart",
+      "model": "xc3",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6434363/pdp"
+    },
+    {
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436193/cart",
+      "model": "ftw3",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6436193/pdp"
+    },
+    {
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6436192/cart",
       "model": "ftw3 ultra",
       "series": "3090",
-      "url": "https://www.amazon.com/dp/B08J5F3G18"
+      "url": "https://api.bestbuy.com/click/-/6436192/pdp"
+    },
+    {
+      "brand": "pny",
+      "cartUrl": "https://api.bestbuy.com/click/-/6432657/cart",
+      "model": "xlr8 revel",
+      "series": "3090",
+      "url": "https://api.bestbuy.com/click/-/6432657/pdp"
+    },
+    {
+      "brand": "nvidia",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439402/cart",
+      "model": "founders edition",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6439402/pdp"
+    },
+    {
+      "brand": "msi",
+      "cartUrl": "https://api.bestbuy.com/click/-/6441172/cart",
+      "model": "ventus 2x",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6441172/pdp"
     },
     {
       "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJRF2CN&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6442484/cart",
       "model": "gaming oc",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HJRF2CN"
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6442484/pdp"
     },
     {
       "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJPDJTY&Quantity.1=1",
-      "model": "eagle oc",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HJPDJTY"
+      "cartUrl": "https://api.bestbuy.com/click/-/6442485/cart",
+      "model": "eagle",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6442485/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJGNJ81&Quantity.1=1",
-      "model": "tuf oc",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HJGNJ81"
+      "brand": "msi",
+      "cartUrl": "https://api.bestbuy.com/click/-/6452940/cart",
+      "model": "ventus 3x",
+      "series": "3060",
+      "url": "https://api.bestbuy.com/click/-/6452940/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08HJLLF7G&Quantity.1=1",
-      "model": "tuf oc",
-      "series": "3090",
-      "url": "https://www.amazon.com/dp/B08HJLLF7G"
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6454328/cart",
+      "model": "xc gaming",
+      "series": "3060",
+      "url": "https://api.bestbuy.com/click/-/6454328/pdp"
     },
     {
       "brand": "amd",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08166SLDF&Quantity.1=1",
-      "model": "5600x",
-      "series": "ryzen5600",
-      "url": "https://www.amazon.com/dp/B08166SLDF"
-    },
-    {
-      "brand": "amd",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B0815XFSGK&Quantity.1=1",
-      "model": "5800x",
-      "series": "ryzen5800",
-      "url": "https://www.amazon.com/dp/product/B0815XFSGK"
-    },
-    {
-      "brand": "amd",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08164VTWH&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6438942/cart",
       "model": "5900x",
       "series": "ryzen5900",
-      "url": "https://www.amazon.com/dp/B08164VTWH"
+      "url": "https://api.bestbuy.com/click/-/6438942/pdp"
     },
     {
       "brand": "amd",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B0815Y8J9N&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6438941/cart",
       "model": "5950x",
       "series": "ryzen5950",
-      "url": "https://www.amazon.com/dp/B0815Y8J9N"
+      "url": "https://api.bestbuy.com/click/-/6438941/pdp"
     },
     {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08PHWJC8X&Quantity.1=1",
+      "brand": "amd",
+      "cartUrl": "https://api.bestbuy.com/click/-/6439000/cart",
+      "model": "5800x",
+      "series": "ryzen5800",
+      "url": "https://api.bestbuy.com/click/-/6439000/pdp"
+    },
+    {
+      "brand": "amd",
+      "cartUrl": "https://api.bestbuy.com/click/-/6438943/cart",
+      "model": "5600x",
+      "series": "ryzen5600",
+      "url": "https://api.bestbuy.com/click/-/6438943/pdp"
+    },
+    {
+      "brand": "sony",
+      "cartUrl": "https://api.bestbuy.com/click/-/6426149/cart",
+      "model": "ps5 console",
+      "series": "sonyps5c",
+      "url": "https://api.bestbuy.com/click/-/6426149/pdp"
+    },
+    {
+      "brand": "sony",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430161/cart",
+      "model": "ps5 digital",
+      "series": "sonyps5de",
+      "url": "https://api.bestbuy.com/click/-/6430161/pdp"
+    },
+    {
+      "brand": "microsoft",
+      "cartUrl": "https://api.bestbuy.com/click/-/6428324/cart",
+      "model": "xbox series x",
+      "series": "xboxsx",
+      "url": "https://api.bestbuy.com/click/-/6428324/pdp"
+    },
+    {
+      "brand": "microsoft",
+      "cartUrl": "https://api.bestbuy.com/click/-/6430277/cart",
+      "model": "xbox series s",
+      "series": "xboxss",
+      "url": "https://api.bestbuy.com/click/-/6430277/pdp"
+    },
+    {
+      "brand": "msi",
+      "cartUrl": "https://api.bestbuy.com/click/-/6440913/cart",
       "model": "amd reference",
-      "series": "rx6900xt",
-      "url": "https://www.amazon.com/dp/B08PHWJC8X"
+      "series": "rx6800xt",
+      "url": "https://api.bestbuy.com/click/-/6440913/pdp"
+    },
+    {
+      "brand": "msi",
+      "cartUrl": "https://api.bestbuy.com/click/-/6441020/cart",
+      "model": "amd reference",
+      "series": "rx6800",
+      "url": "https://api.bestbuy.com/click/-/6441020/pdp"
     },
     {
       "brand": "xfx",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08PDQJVD9&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6442077/cart",
       "model": "amd reference",
-      "series": "rx6900xt",
-      "url": "https://www.amazon.com/dp/B08PDQJVD9"
-    },
-    {
-      "brand": "gigabyte",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NS4W2ZY&Quantity.1=1",
-      "model": "amd reference",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NS4W2ZY"
-    },
-    {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08MVC76SR&Quantity.1=1",
-      "model": "amd reference",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08MVC76SR"
-    },
-    {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NXXT7WN&Quantity.1=1",
-      "model": "nitro+",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NXXT7WN"
-    },
-    {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NXYNLMR&Quantity.1=1",
-      "model": "pulse",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NXYNLMR"
-    },
-    {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NXVNMPQ&Quantity.1=1",
-      "model": "nitro+",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NXVNMPQ"
+      "series": "rx6800",
+      "url": "https://api.bestbuy.com/click/-/6442077/pdp"
     },
     {
       "brand": "xfx",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08N6ZLX9B&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6441226/cart",
       "model": "amd reference",
       "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08N6ZLX9B"
+      "url": "https://api.bestbuy.com/click/-/6441226/pdp"
     },
     {
       "brand": "xfx",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NX14LV1&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6442585/cart",
       "model": "merc",
       "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NX14LV1"
+      "url": "https://api.bestbuy.com/click/-/6442585/pdp"
     },
     {
       "brand": "xfx",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NN76VJD&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6444358/cart",
       "model": "amd reference",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08NN76VJD"
+      "series": "rx6900xt",
+      "url": "https://api.bestbuy.com/click/-/6444358/pdp"
+    },
+    {
+      "brand": "msi",
+      "cartUrl": "https://api.bestbuy.com/click/-/6444716/cart",
+      "model": "amd reference",
+      "series": "rx6900xt",
+      "url": "https://api.bestbuy.com/click/-/6444716/pdp"
     },
     {
       "brand": "xfx",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P5YFZCY&Quantity.1=1",
+      "cartUrl": "https://api.bestbuy.com/click/-/6445157/cart",
       "model": "merc",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08P5YFZCY"
+      "series": "rx6900xt",
+      "url": "https://api.bestbuy.com/click/-/6445157/pdp"
     },
     {
-      "brand": "powercolor",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08MNZM5TK&Quantity.1=1",
-      "model": "amd reference",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08MNZM5TK"
+      "brand": "corsair",
+      "cartUrl": "https://api.bestbuy.com/click/-/6351845/cart",
+      "model": "750 platinum",
+      "series": "sf",
+      "url": "https://api.bestbuy.com/click/-/6351845/pdp"
     },
     {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08MVCLBWK&Quantity.1=1",
-      "model": "amd reference",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08MVCLBWK"
+      "brand": "corsair",
+      "cartUrl": "https://api.bestbuy.com/click/-/6351844/cart",
+      "model": "600 platinum",
+      "series": "sf",
+      "url": "https://api.bestbuy.com/click/-/6351844/pdp"
     },
     {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NXZSPMY&Quantity.1=1",
-      "model": "nitro+",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08NXZSPMY"
+      "brand": "pny",
+      "cartUrl": "https://api.bestbuy.com/click/-/6446660/cart",
+      "model": "xlr8 uprising",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6446660/pdp"
     },
     {
-      "brand": "sapphire",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NXYBVDB&Quantity.1=1",
-      "model": "pulse",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08NXYBVDB"
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6444445/cart",
+      "model": "xc gaming",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6444445/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NWJ29NB&Quantity.1=1",
-      "model": "strix oc",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08NWJ29NB"
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6444444/cart",
+      "model": "ftw3",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6444444/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08P3YT3MY&Quantity.1=1",
-      "model": "tuf oc",
-      "series": "rx6800",
-      "url": "https://www.amazon.com/dp/B08P3YT3MY"
+      "brand": "evga",
+      "cartUrl": "https://api.bestbuy.com/click/-/6444449/cart",
+      "model": "ftw3",
+      "series": "3060ti",
+      "url": "https://api.bestbuy.com/click/-/6444449/pdp"
     },
     {
-      "brand": "asus",
-      "cartUrl":
-      "https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B08NWHKGS9&Quantity.1=1",
-      "model": "strix lc",
-      "series": "rx6800xt",
-      "url": "https://www.amazon.com/dp/B08NWHKGS9"
+      "brand": "pny",
+      "cartUrl": "https://api.bestbuy.com/click/-/6454319/cart",
+      "model": "dual fan",
+      "series": "3060",
+      "url": "https://api.bestbuy.com/click/-/6454319/pdp"
+    },
+    {
+      "brand": "pny",
+      "cartUrl": "https://api.bestbuy.com/click/-/6454318/cart",
+      "model": "single fan",
+      "series": "3060",
+      "url": "https://api.bestbuy.com/click/-/6454318/pdp"
     }
   ]
 }
