@@ -4,10 +4,14 @@ plugins {
 }
 
 group 'com.apion'
-version '1.0.2-SNAPSHOT'
+version '1.2.0-SNAPSHOT'
 mainClassName = 'Epsilon'
 repositories {
     mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
 }
 jar {
     manifest {
@@ -24,7 +28,10 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
-    compile group: 'com.google.guava', name: 'guava', version: '23.5-jre'
+    implementation group: 'com.google.guava', name: 'guava', version: '23.5-jre'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:3.14.6'
+    implementation ('net.dv8tion:JDA:4.2.0_252') {
+        exclude module: 'opus-java'
+    }
 }

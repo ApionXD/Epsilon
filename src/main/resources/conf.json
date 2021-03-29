@@ -5,5 +5,9 @@
   "BEST_BUY_TIMEOUT": 30000,
   "BEST_BUY_KEY": "",
   "BEST_BUY_USE_KEY": true,
+  "DISCORD_ENABLED": true,
+  "DISCORD_BOT_NAME": "GPU Bot",
+  "DISCORD_BOT_TOKEN":"",
+  "DISCORD_CHANNEL_NAME": "gpu-stock",
   "OUTPUT_VERBOSITY": 2
 }

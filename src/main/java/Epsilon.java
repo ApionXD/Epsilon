@@ -2,17 +2,13 @@ import cards.Card;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import shops.Amazon;
-import shops.BestBuy;
+import shops.BestBuyAPI;
 import shops.Shop;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 
 public class Epsilon
@@ -28,7 +24,13 @@ public class Epsilon
     public static boolean bestBuyEnabled;
     public static String bestBuyKey;
     public static boolean bestBuyUseKey;
+
     public static int outputVerbosity;
+
+    public static boolean isDiscordEnabled;
+    public static String discordBotToken;
+    public static String discordChannelName;
+    public static String discordBotName;
 
     public static Shop amazon;
     public static Shop bestBuy;
@@ -42,7 +44,19 @@ public class Epsilon
         }
         if (bestBuyEnabled)
         {
-            bestBuy= new BestBuy(bestBuyTimeout, bestBuyKey);
+            bestBuy= new BestBuyAPI(bestBuyTimeout, bestBuyKey);
+        }
+        if (isDiscordEnabled)
+        {
+            Card.enableDiscord(discordBotToken, discordChannelName, discordBotName);
+            try
+            {
+                Thread.sleep(5000);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
         cards = getCardList();
         for (int i = 0; i < cards.size(); i++)
@@ -55,7 +69,7 @@ public class Epsilon
             }
             try
             {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e)
             {
@@ -161,8 +175,13 @@ public class Epsilon
         }
         else
         {
+            System.out.println("Best Buy is only supported with developer keys for now.");
             bestBuyEnabled = false;
         }
+        isDiscordEnabled = json.get("DISCORD_ENABLED").getAsBoolean();
+        discordBotName = json.get("DISCORD_BOT_NAME").getAsString();
+        discordBotToken = json.get("DISCORD_BOT_TOKEN").getAsString();
+        discordChannelName = json.get("DISCORD_CHANNEL_NAME").getAsString();
 
     }
     public static void parseAmazonLinks()
