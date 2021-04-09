@@ -14,7 +14,9 @@ public class Card implements Runnable
     private Shop shop;
     private int verbosity;
     private boolean inStock;
+    private boolean running;
     private static boolean isDiscordEnabled = false;
+
 
     private static DiscordBot bot;
 
@@ -24,6 +26,7 @@ public class Card implements Runnable
         this.link = link;
         this.shop = shop;
         this.verbosity = verbosity;
+        running = false;
         inStock = false;
     }
     public static void enableDiscord(String token, String channel, String name)
@@ -41,7 +44,7 @@ public class Card implements Runnable
     @Override
     public void run()
     {
-        while(true)
+        while(running)
         {
             try
             {
@@ -83,5 +86,9 @@ public class Card implements Runnable
                 e.printStackTrace();
             }
         }
+    }
+    public void stop()
+    {
+        running = false;
     }
 }
