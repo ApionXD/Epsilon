@@ -1,10 +1,9 @@
 package hooks;
 
-import cards.Card;
+import items.Item;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import javax.security.auth.login.LoginException;
 
@@ -27,13 +26,13 @@ public class DiscordBot
             e.printStackTrace();
         }
     }
-    public void sendStockAlert(Card cardToSend, double priceToSend)
+    public void sendStockAlert(Item itemToSend, double priceToSend)
     {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setAuthor(botName, BOT_LINK);
-        builder.setTitle(cardToSend.getName(), cardToSend.getLink());
+        builder.setTitle(itemToSend.getName(), itemToSend.getLink());
         builder.addField("Price:", String.valueOf(priceToSend), false);
-        builder.addField("Store: ", cardToSend.getShop().getName(), false);
+        builder.addField("Store: ", itemToSend.getShop().getName(), false);
         jda.getGuilds().get(0).getTextChannelsByName(channelName, true).get(0).sendMessage(builder.build()).queue();
     }
 

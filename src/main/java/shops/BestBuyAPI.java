@@ -1,6 +1,6 @@
 package shops;
 
-import cards.Card;
+import items.Item;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
@@ -21,7 +21,7 @@ public class BestBuyAPI extends Shop
         this.apiKey = apiKey;
     }
     @Override
-    public int checkCurrentStatus(Card cardToCheck)
+    public int checkCurrentStatus(Item itemToCheck)
     {
         try
         {
@@ -53,16 +53,16 @@ public class BestBuyAPI extends Shop
     }
 
     @Override
-    public double checkPrice(Card cardToCheck)
+    public double checkPrice(Item itemToCheck)
     {
         double result = 0;
         return jsonFile.get("salePrice").getAsDouble();
     }
 
     @Override
-    public void checkPage(Card cardToCheck) throws IOException {
+    public void checkPage(Item itemToCheck) throws IOException {
         JsonReader reader = null;
-        String url = cardToCheck.getLink() + apiKey;
+        String url = itemToCheck.getLink() + apiKey;
         OkHttpClient client = new OkHttpClient();
         Request req = new Request.Builder().url(url).build();
         Response response = client.newCall(req).execute();

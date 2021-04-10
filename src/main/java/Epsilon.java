@@ -1,247 +1,122 @@
-import cards.Card;
-import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import hooks.DiscordBot;
+import items.Item;
+import items.ItemList;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import shops.Amazon;
+import shops.BestBuy;
 import shops.BestBuyAPI;
 import shops.Shop;
+import util.ConfigUtil;
+import util.FileUtil;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 
+
+@Slf4j
 
 public class Epsilon
 {
-    public static final String CONF_FILE = "conf.json";
-    public static final String LINK_FILE = "cards.json";
-    public static final String DEVEL_PATH = "src/main/resources/";
-    public static ArrayList<Card> cards;
+    public static final String SHOP_DIR = "shops/";
+    public static final Path CONF_FILE = Paths.get("config/conf.json");
+    public static final Path AMAZON_FILE = Paths.get(SHOP_DIR +"amazon.json");
+    public static final Path BEST_BUY_FILE = Paths.get(SHOP_DIR,"best-buy.json");
 
-    public static int amazonTimeout;
-    public static boolean amazonEnabled;
-    public static int bestBuyTimeout;
-    public static boolean bestBuyEnabled;
-    public static String bestBuyKey;
-    public static boolean bestBuyUseKey;
+    public static final Gson gson =  new GsonBuilder()
+                    .setPrettyPrinting()
+                    .create();
 
-    public static int outputVerbosity;
+    public static ConfigUtil config;
+    public static ItemList itemList;
+    public static ArrayList<Item> items;
 
-    public static boolean isDiscordEnabled;
-    public static String discordBotToken;
-    public static String discordChannelName;
-    public static String discordBotName;
+    public static DiscordBot discordBot;
+
 
     public static Shop amazon;
     public static Shop bestBuy;
 
+
     public static void main(String[] args)
     {
-        readConfig();
-        if (amazonEnabled)
-        {
-            amazon = new Amazon(amazonTimeout);
-        }
-        if (bestBuyEnabled)
-        {
-            bestBuy= new BestBuyAPI(bestBuyTimeout, bestBuyKey);
-        }
-        if (isDiscordEnabled)
-        {
-            Card.enableDiscord(discordBotToken, discordChannelName, discordBotName);
-            try
-            {
-                Thread.sleep(5000);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-        cards = getCardList();
-        for (int i = 0; i < cards.size(); i++)
-        {
-            Thread t = new Thread(cards.get(i));
-            t.start();
-            if (outputVerbosity == 2)
-            {
-                System.out.println("Thread " + i + " started!");
-            }
-            try
-            {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-        }
+        log.debug("Checking config file");
+        checkConfig();
+        itemList = new ItemList();
+        log.debug("Checking Amazon link file");
+        checkAmazon();
+        log.debug("Checking Best Buy link file");
+        checkBestBuy();
+        log.debug("Checking discord integration");
+        checkDiscord();
     }
-    public static ArrayList<Card> getCardList()
-    {
-        ArrayList<Card> result = new ArrayList<Card>();
-        JsonReader reader = null;
-
-        try
-        {
-            Path current = Paths.get(LINK_FILE);
-            String s = current.toAbsolutePath().toString();
-            reader = new JsonReader(new FileReader(s));
+    @SneakyThrows
+    public static void checkConfig() {
+        if (FileUtil.checkFileExists(CONF_FILE)) {
+            BufferedReader reader = Files.newBufferedReader(CONF_FILE);
+            config = gson.fromJson(reader, ConfigUtil.class);
         }
-        catch (Exception e)
-        {
-            try
-            {
-                System.out.println("Link file not found, checking to see if you're in a development environment");
-                reader = new JsonReader(new FileReader(DEVEL_PATH + LINK_FILE));
-            }
-            catch (Exception f)
-            {
-                System.out.println("Can't find config file, make sure that conf.json is in your current directory!");
-            }
+        else {
+            log.info("Config file not found, generating a new one!");
+            config = new ConfigUtil();
+            FileUtil.createFile(CONF_FILE);
+            BufferedWriter w = Files.newBufferedWriter(CONF_FILE);
+            w.append(gson.toJson(config));
+            w.close();
         }
-        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
-
-        if (amazonEnabled)
-        {
-            JsonArray amazonObject = json.getAsJsonArray("amazon");
-            for (int i = 0; i < amazonObject.size(); i++)
-            {
-                JsonObject o = amazonObject.get(i).getAsJsonObject();
-                Card c = new Card(o.get("name").getAsString(), o.get("link").getAsString(), amazon, outputVerbosity);
-                result.add(c);
-            }
-        }
-        if (bestBuyEnabled)
-        {
-            JsonArray bestBuyObject = json.getAsJsonArray("best_buy");
-            for (int i = 0; i < bestBuyObject.size(); i++)
-            {
-                JsonObject o = bestBuyObject.get(i).getAsJsonObject();
-                if (o.has("sku"))
-                {
-                    Card c = new Card(o.get("name").getAsString(), "https://api.bestbuy.com/v1/products/" + o.get("sku").getAsString() + ".json?show=sku,name,salePrice,orderable&apiKey=" , bestBuy, outputVerbosity);
-                    result.add(c);
-                }
-                else if (o.has("link"))
-                {
-                    System.out.println("Epsilon doesn't support BestBuy links yet! Please use the SKU of the product instead.");
-                }
-
-            }
-        }
-
-
-        return result;
+        log.debug("Config read finished");
     }
-    public static void readConfig()
-    {
-        JsonReader reader = null;
-
-        try
+    @SneakyThrows
+    public static void checkAmazon() {
+        if (config.isAmazonEnabled())
         {
-            Path current = Paths.get(CONF_FILE);
-            String s = current.toAbsolutePath().toString();
-            reader = new JsonReader(new FileReader(s));
-        }
-        catch (Exception e)
-        {
-            try
-            {
-                System.out.println("Config file not found, checking to see if you're in a development environment");
-                reader = new JsonReader(new FileReader(DEVEL_PATH + CONF_FILE));
+            if (!FileUtil.checkFileExists(AMAZON_FILE)) {
+                log.info("Amazon config file not found, generating a new one");
+                FileUtil.createFile(AMAZON_FILE);
+                FileUtil.genDefaultShopConfig(AMAZON_FILE);
             }
-            catch (Exception f)
-            {
-                System.out.println("Can't find config file, make sure that conf.json is in your current directory!");
-            }
+            amazon = new Amazon(config.getAmazonTimeout());
+            itemList.addStoreToCardList(AMAZON_FILE, amazon);
+            HashSet<Item> items = itemList.getCardsByShop(amazon);
+            amazon.setItemList(items);
+            amazon.run();
         }
-        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
-        outputVerbosity = json.get("OUTPUT_VERBOSITY").getAsInt();
-        if (outputVerbosity < 0 || outputVerbosity > 2)
-        {
-            outputVerbosity = 0;
-            System.out.println("Invalid verbosity option in config, defaulting to 0");
-
-        }
-        amazonTimeout = json.get("AMAZON_TIMEOUT").getAsInt();
-        amazonEnabled = json.get("AMAZON_ENABLED").getAsBoolean();
-        bestBuyTimeout = json.get("BEST_BUY_TIMEOUT").getAsInt();
-        bestBuyEnabled = json.get("BEST_BUY_ENABLED").getAsBoolean();
-        bestBuyUseKey = json.get("BEST_BUY_USE_KEY").getAsBoolean();
-        if (bestBuyUseKey)
-        {
-            bestBuyKey = json.get("BEST_BUY_KEY").getAsString();
-        }
-        else
-        {
-            System.out.println("Best Buy is only supported with developer keys for now.");
-            bestBuyEnabled = false;
-        }
-        isDiscordEnabled = json.get("DISCORD_ENABLED").getAsBoolean();
-        discordBotName = json.get("DISCORD_BOT_NAME").getAsString();
-        discordBotToken = json.get("DISCORD_BOT_TOKEN").getAsString();
-        discordChannelName = json.get("DISCORD_CHANNEL_NAME").getAsString();
-
+        log.debug("Amazon init finished");
     }
-    public static void parseAmazonLinks()
-    {
-        JsonReader reader = null;
-        try
+    @SneakyThrows
+    public static void checkBestBuy() {
+        if (config.isBestBuyEnabled())
         {
-            reader = new JsonReader(new FileReader("links.json"));
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
-        JsonArray array = json.get("links").getAsJsonArray();
-        JsonArray outputArray = new JsonArray();
-        for (int i = 0; i < array.size(); i++)
-        {
-            JsonObject o = array.get(i).getAsJsonObject();
-            JsonObject output = new JsonObject();
-            if (o.get("series").getAsString().equals("3060") || o.get("series").getAsString().equals("3060ti") || o.get("series").getAsString().equals("3070") || o.get("series").getAsString().equals("3080") || o.get("series").getAsString().equals("3090"))
-            {
-                String name = o.get("brand").getAsString().toUpperCase() + " RTX " + o.get("series").getAsString() + " " + o.get("model").getAsString();
-                output.add("name", new JsonPrimitive(name));
-                String link = o.get("url").getAsString();
-                output.add("link", new JsonPrimitive(link));
-                outputArray.add(output);
+            if(config.isBestBuyUseKey()) {
+                //bestBuy = new BestBuyAPI(config.getBestBuyTimeout(), config.getBestBuyKey());
+                log.warn("Best Buy API is not supported");
             }
+            if (!FileUtil.checkFileExists(BEST_BUY_FILE)) {
+                log.info("Best Buy config file not found, generating a new one");
+                FileUtil.createFile(BEST_BUY_FILE);
+                FileUtil.genDefaultShopConfig(BEST_BUY_FILE);
+            }
+            bestBuy = new BestBuy(config.getBestBuyTimeout());
+            itemList.addStoreToCardList(BEST_BUY_FILE, bestBuy);
+            bestBuy.setItemList(itemList.getCardsByShop(bestBuy));
+            bestBuy.run();
         }
-        System.out.println(outputArray.isJsonNull());
-        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(outputArray));
+        log.debug("Best Buy init finished");
     }
-    public static void parseBestBuyLinks()
-    {
-        JsonReader reader = null;
-        try
+    public static void checkDiscord() {
+        if (config.isDiscordEnabled())
         {
-            reader = new JsonReader(new FileReader(DEVEL_PATH + "links.json"));
+            discordBot = new DiscordBot(config.getDiscordBotToken(), config.getDiscordChannelName(), config.getDiscordBotName());
+            log.info("Enabling Discord");
+            Shop.enableDiscord(discordBot);
         }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
-        JsonArray array = json.get("links").getAsJsonArray();
-        JsonArray outputArray = new JsonArray();
-        for (int i = 0; i < array.size(); i++)
-        {
-            JsonObject o = array.get(i).getAsJsonObject();
-            JsonObject output = new JsonObject();
-            if (o.get("series").getAsString().equals("3060") || o.get("series").getAsString().equals("3060ti") || o.get("series").getAsString().equals("3070") || o.get("series").getAsString().equals("3080") || o.get("series").getAsString().equals("3090"))
-            {
-                String name = o.get("brand").getAsString().toUpperCase() + " RTX " + o.get("series").getAsString() + " " + o.get("model").getAsString();
-                output.add("name", new JsonPrimitive(name));
-                String link = o.get("url").getAsString().substring(32, 39);
-                output.add("sku", new JsonPrimitive(link));
-                outputArray.add(output);
-            }
-        }
-        System.out.println(outputArray.isJsonNull());
-        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(outputArray));
+        log.debug("Discord init finished");
     }
 }

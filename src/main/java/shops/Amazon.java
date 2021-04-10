@@ -1,11 +1,12 @@
 package shops;
 
-import cards.Card;
+import items.Item;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 public class Amazon extends Shop
 {
@@ -16,7 +17,7 @@ public class Amazon extends Shop
         super(NAME, timeout);
     }
     @Override
-    public int checkCurrentStatus(Card cardToCheck)
+    public int checkCurrentStatus(Item itemToCheck)
     {
 
         int result = -100;
@@ -41,15 +42,15 @@ public class Amazon extends Shop
     }
 
     @Override
-    public double checkPrice(Card cardToCheck)
+    public double checkPrice(Item itemToCheck)
     {
         Element e = lastPage.selectFirst("#price_inside_buybox");
         return Double.parseDouble(e.text().substring(1));
     }
 
     @Override
-    public void checkPage(Card cardToCheck) throws IOException {
-        String url = cardToCheck.getLink();
+    public void checkPage(Item itemToCheck) throws IOException {
+        String url = itemToCheck.getLink();
         double random = Math.random();
         if (random <= 0.2)
         {
