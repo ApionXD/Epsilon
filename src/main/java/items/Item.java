@@ -7,6 +7,8 @@ import shops.Shop;
 
 import java.io.IOException;
 
+import static shops.Shop.bot;
+
 @Getter
 @Slf4j
 public class Item implements Runnable
@@ -16,8 +18,6 @@ public class Item implements Runnable
     private Shop shop;
     private boolean inStock;
     private boolean running;
-    private static boolean isDiscordEnabled = false;
-    private static DiscordBot bot;
 
     public Item(String name, String link, Shop shop) {
         this.name = name;
@@ -41,17 +41,18 @@ public class Item implements Runnable
             if (status == 1) {
                 log.trace("Checking price!");
                 double price = shop.checkPrice(this);
-                System.out.println("Card: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + price);
-                if (isDiscordEnabled && !inStock) {
+                System.out.println("Item: " + '\n' + name + " is in stock"  + " at " + shop.getName() + '!' + '\n' + link + '\n' + "for " + price);
+                if (Shop.discordEnabled && !inStock) {
                     bot.sendStockAlert(this, price);
                 }
                 inStock = true;
             }
             if (status == -1) {
-                log.debug("Encountered captcha for card " + this.getName() + " at shop " + this.getShop().getName());
+
+                log.debug("Encountered captcha for item " + this.getName() + " at shop " + this.getShop().getName());
             }
             if (status == 0) {
-                log.debug("Card " + this.getName() + " at shop " + this.getShop().getName() + " is out of stock");
+                log.debug("Item " + this.getName() + " at shop " + this.getShop().getName() + " is out of stock");
                 inStock = false;
             }
             try

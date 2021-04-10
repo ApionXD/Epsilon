@@ -1,11 +1,14 @@
 package shops;
 
+import com.google.common.collect.Lists;
 import items.Item;
+import lombok.SneakyThrows;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Amazon extends Shop
@@ -16,6 +19,56 @@ public class Amazon extends Shop
     {
         super(NAME, timeout);
     }
+
+    @SneakyThrows
+    private void trySkippingCaptcha() {
+        ArrayList<String> linksToTry = Lists.newArrayList(
+                "https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=2858778011&ref_=nav_cs_prime_video",
+                         "https://www.amazon.com/alm/storefront?almBrandId=VUZHIFdob2xlIEZvb2Rz&ref_=nav_cs_whole_foods_in_region",
+                         "https://www.amazon.com/gp/goldbox?ref_=nav_cs_gb"
+        );
+        double random = Math.random();
+        if (random <= 0.33)
+        {
+                     Jsoup.connect(linksToTry.get(0))
+                    .header("Host", "www.amazon.com")
+                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0")
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+                    .header("Accept-Language", "en-US,en;q=0.5")
+                    .header("Accept-Encoding", "gzip, deflate, br")
+                    .header("Connection", "keep-alive")
+                    .header("Upgrade-Insecure-Requests", "1")
+                    .header("Cache-Control", "max-age=0")
+                    .header("TE", "Trailers").get();
+        }
+        else if (random <= 0.66)
+        {
+                    Jsoup.connect(linksToTry.get(1))
+                    .header("Host", "www.amazon.com")
+                    .userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36")
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+                    .header("Accept-Language", "en-US,en;q=0.5")
+                    .header("Accept-Encoding", "gzip, deflate, br")
+                    .header("Connection", "keep-alive")
+                    .header("Upgrade-Insecure-Requests", "1")
+                    .header("Cache-Control", "max-age=0")
+                    .header("TE", "Trailers").get();
+        }
+        else if (random <= 1)
+        {
+                    Jsoup.connect(linksToTry.get(2))
+                    .header("Host", "www.amazon.com")
+                    .userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 OPR/38.0.2220.41")
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+                    .header("Accept-Language", "en-US,en;q=0.5")
+                    .header("Accept-Encoding", "gzip, deflate, br")
+                    .header("Connection", "keep-alive")
+                    .header("Upgrade-Insecure-Requests", "1")
+                    .header("Cache-Control", "max-age=0")
+                    .header("TE", "Trailers").get();
+        }
+    }
+
     @Override
     public int checkCurrentStatus(Item itemToCheck)
     {
@@ -37,6 +90,9 @@ public class Amazon extends Shop
             {
                 result = 0;
             }
+        }
+        if (Math.random() <= 0.5) {
+            trySkippingCaptcha();
         }
         return result;
     }

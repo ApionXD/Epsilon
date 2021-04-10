@@ -4,15 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 @Slf4j
@@ -42,10 +37,12 @@ public class FileUtil {
         o = new JsonObject();
         o.addProperty("name", "SAMPLE ITEM 2");
         o.addProperty("link", "https://www.amazon.com/dp/B0002YKBV2");
-        o.addProperty("description", "This is an example item so you can see what the format is supposed to be. Notice the commas separating the items");
+        o.addProperty("description", "This is an example item so you can see what the format is supposed to be. Notice the placement of commas");
         exampleArray.add(o);
         String defaultShopFile = GSON.toJson(exampleArray);
         BufferedWriter writer = Files.newBufferedWriter(shopFile);
+        writer.append("//This is an example link file. Enter your own items, and delete the example items.\n");
+        writer.append("//Make sure that you put the right websites links in each document!\n");
         writer.append(defaultShopFile);
         writer.close();
     }

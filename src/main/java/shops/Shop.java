@@ -17,8 +17,9 @@ public abstract class Shop implements Runnable
     private String name;
     private int timeout;
     private HashSet<Item> itemList;
-    private static boolean isDiscordEnabled = false;
-    private static DiscordBot bot;
+
+    public static boolean discordEnabled = false;
+    public static DiscordBot bot;
 
     public Shop(String name, int timeout)
     {
@@ -46,13 +47,13 @@ public abstract class Shop implements Runnable
     }
     public static void enableDiscord(DiscordBot botInstance)
     {
-        if (isDiscordEnabled)
+        if (discordEnabled)
         {
             log.error("Discord already enabled!");
         }
         else
         {
-            isDiscordEnabled = true;
+            discordEnabled = true;
             bot = botInstance;
         }
         log.debug("Discord enabled!");

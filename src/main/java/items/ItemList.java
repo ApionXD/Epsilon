@@ -1,14 +1,11 @@
 package items;
 
-import com.google.common.collect.Collections2;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;
 import com.google.common.collect.SetMultimap;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import enums.ShopType;
 import shops.Shop;
 
 import java.io.BufferedReader;

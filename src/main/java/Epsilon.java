@@ -75,38 +75,40 @@ public class Epsilon
     }
     @SneakyThrows
     public static void checkAmazon() {
+        if (!FileUtil.checkFileExists(AMAZON_FILE)) {
+            log.info("Amazon config file not found, generating a new one");
+            FileUtil.createFile(AMAZON_FILE);
+            FileUtil.genDefaultShopConfig(AMAZON_FILE);
+        }
         if (config.isAmazonEnabled())
         {
-            if (!FileUtil.checkFileExists(AMAZON_FILE)) {
-                log.info("Amazon config file not found, generating a new one");
-                FileUtil.createFile(AMAZON_FILE);
-                FileUtil.genDefaultShopConfig(AMAZON_FILE);
-            }
             amazon = new Amazon(config.getAmazonTimeout());
             itemList.addStoreToCardList(AMAZON_FILE, amazon);
             HashSet<Item> items = itemList.getCardsByShop(amazon);
             amazon.setItemList(items);
-            amazon.run();
+            Thread t = new Thread(amazon);
+            t.start();
         }
         log.debug("Amazon init finished");
     }
     @SneakyThrows
     public static void checkBestBuy() {
+        if (!FileUtil.checkFileExists(BEST_BUY_FILE)) {
+            log.warn("Best Buy config file not found, generating a new one");
+            FileUtil.createFile(BEST_BUY_FILE);
+            FileUtil.genDefaultShopConfig(BEST_BUY_FILE);
+        }
         if (config.isBestBuyEnabled())
         {
             if(config.isBestBuyUseKey()) {
                 //bestBuy = new BestBuyAPI(config.getBestBuyTimeout(), config.getBestBuyKey());
                 log.warn("Best Buy API is not supported");
             }
-            if (!FileUtil.checkFileExists(BEST_BUY_FILE)) {
-                log.info("Best Buy config file not found, generating a new one");
-                FileUtil.createFile(BEST_BUY_FILE);
-                FileUtil.genDefaultShopConfig(BEST_BUY_FILE);
-            }
             bestBuy = new BestBuy(config.getBestBuyTimeout());
             itemList.addStoreToCardList(BEST_BUY_FILE, bestBuy);
             bestBuy.setItemList(itemList.getCardsByShop(bestBuy));
-            bestBuy.run();
+            Thread t = new Thread(bestBuy);
+            t.start();
         }
         log.debug("Best Buy init finished");
     }
@@ -114,7 +116,7 @@ public class Epsilon
         if (config.isDiscordEnabled())
         {
             discordBot = new DiscordBot(config.getDiscordBotToken(), config.getDiscordChannelName(), config.getDiscordBotName());
-            log.info("Enabling Discord");
+            log.debug("Enabling Discord");
             Shop.enableDiscord(discordBot);
         }
         log.debug("Discord init finished");
